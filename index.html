@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Даниил — веб-разработчик, портфолио</title>
+<style>
+:root{--bg:#EEF1EC;--surf:#fff;--ink:#1E2A24;--muted:#5F6E66;--acc:#2F7D4F;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141A16;--surf:#1E2621;--ink:#E5EBE6;--muted:#93A198;--acc:#6FC08E;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.c{max-width:960px;margin:0 auto;padding:56px 24px 72px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.1;margin:0 0 14px}
+.lead{color:var(--muted);font-size:19px;max-width:620px;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+a.card{display:block;background:var(--surf);border-radius:16px;padding:22px;text-decoration:none;color:inherit;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:transform .15s}
+a.card:hover{transform:translateY(-2px)}
+.card i{display:block;width:34px;height:34px;border-radius:10px;margin-bottom:14px}
+.card b{display:block;font-size:19px}.card span{color:var(--muted);font-size:15px}
+footer{margin-top:48px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body><div class="c">
+<h1>Сайты и лендинги для малого бизнеса</h1>
+<p class="lead">Привет, я Даниил, веб-разработчик. Делаю адаптивные сайты на HTML/CSS, WordPress и Tilda. Ниже — концепты лендингов для разных ниш, их можно открыть и с телефона.</p>
+<div class="grid">
+<a class="card" href="avtoservis.html"><i style="background:#FF7A1A"></i><b>Автосервис «Гараж 24»</b><span>Тёмный лендинг с записью на диагностику</span></a>
+<a class="card" href="stomatologia.html"><i style="background:#0E9384"></i><b>Стоматология «Белая линия»</b><span>Светлый лендинг с ценами и записью</span></a>
+<a class="card" href="salon.html"><i style="background:#7B3F7E"></i><b>Салон красоты «Лиловый»</b><span>Лендинг с выбором мастера</span></a>
+<a class="card" href="kofeinya.html"><i style="background:#B5542E"></i><b>Кофейня «Зерно и пар»</b><span>Тёплый лендинг с меню</span></a>
+<a class="card" href="klining.html"><i style="background:#1E9E5A"></i><b>Клининг «Чистый лист»</b><span>Лендинг с расчётом стоимости</span></a>
+</div>
+<footer>Все работы — концепты для портфолио.</footer>
+</div></body></html>
