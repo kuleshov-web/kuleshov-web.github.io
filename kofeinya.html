@@ -4,83 +4,308 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Зерно и пар — Кофейня, Нижний Новгород</title>
+<meta name="description" content="Свежая обжарка каждую неделю, завтраки весь день. Закажите кофе онлайн к нужному времени и заберите без очереди.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F6EFE6;--surf:#FFFBF6;--ink:#2B1D14;--muted:#7C6656;--acc:#B5542E;--accink:#FFFFFF;color-scheme:light}
+:root{--bg:#F7F1EA;--surf:#FFFDF9;--ink:#2B1D14;--muted:#7D6656;--acc:#8A5A3B;--accink:#FFFFFF;color-scheme:light;--hf:'Playfair Display',Georgia,serif;--bf:'Manrope',system-ui,sans-serif;--line:color-mix(in srgb,var(--ink) 11%,transparent)}
+
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Noto Sans CJK JP","DejaVu Sans",system-ui,sans-serif}
-h1,h2,h3,.logo{font-family:"DejaVu Serif","Noto Sans CJK JP",serif;letter-spacing:-.01em}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--bf)}
+h1,h2,h3,.logo{font-family:var(--hf);letter-spacing:-.01em}
 a{color:inherit}
 .c{max-width:1180px;margin:0 auto;padding:0 28px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-.logo{font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}
+.logo{font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:inline-block}
 .links{display:flex;gap:30px;color:var(--muted);font-size:15px}
-.phone{font-weight:700}
-.btn{display:inline-block;background:var(--acc);color:var(--accink);padding:16px 28px;border-radius:12px;font-weight:700;text-decoration:none;border:0;font-size:16px}
+.links a{text-decoration:none}.links a:hover{color:var(--acc)}
+.phone{font-weight:700;text-decoration:none}
+.btn{display:inline-block;background:var(--acc);color:var(--accink);padding:16px 28px;border-radius:12px;font:700 16px var(--bf);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,opacity .15s;text-align:center}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
 .ghost{background:transparent;color:var(--ink);border:1.5px solid color-mix(in srgb,var(--ink) 25%,transparent)}
+.inp{display:block;width:100%;background:var(--bg);border-radius:10px;padding:14px 16px;color:var(--ink);font:15px var(--bf);margin-bottom:10px;border:1px solid var(--line)}
+.inp::placeholder{color:var(--muted)}
+.inp:focus{outline:2px solid var(--acc);border-color:transparent}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:48px 0 70px}
-.badge{display:inline-block;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc);padding:7px 14px;border-radius:30px;font-size:14px;font-weight:700;margin-bottom:22px}
+.badge{display:inline-block;background:color-mix(in srgb,var(--acc) 16%,transparent);color:var(--acc);padding:7px 14px;border-radius:30px;font-size:14px;font-weight:700;margin-bottom:22px}
 h1{font-size:60px;line-height:1.06;margin:0 0 22px;font-weight:800}
 .sub{color:var(--muted);font-size:19px;max-width:560px;margin:0 0 32px}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.card{background:var(--surf);border-radius:22px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
+.card{background:var(--surf);border-radius:22px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);border:1px solid var(--line)}
 .card h3{margin:0 0 4px;font-size:21px}
-.card p{margin:0 0 18px;color:var(--muted);font-size:14px}
+.card>p{margin:0 0 18px;color:var(--muted);font-size:14px}
 .card ul{list-style:none;margin:0 0 20px;padding:0}
 .card li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 15%,transparent);font-size:15px}
 .card li b{color:var(--acc);white-space:nowrap;padding-left:10px}
-.inp{background:var(--bg);border-radius:10px;padding:14px 16px;color:var(--muted);font-size:15px;margin-bottom:10px;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
-.card .btn{width:100%;text-align:center;margin-top:4px}
+.card .btn{width:100%;margin-top:4px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:70px}
-.st{background:var(--surf);border-radius:18px;padding:24px 26px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
-.st b{display:block;font-size:34px;font-family:"DejaVu Serif",sans-serif;color:var(--acc)}
+.st{background:var(--surf);border-radius:18px;padding:24px 26px;border:1px solid var(--line)}
+.st b{display:block;font-size:34px;font-family:var(--hf);color:var(--acc)}
 .st span{color:var(--muted);font-size:15px}
-section{padding:0 0 80px}
+section{padding:0 0 80px;scroll-margin-top:20px}
 h2{font-size:40px;margin:0 0 28px;font-weight:800}
 .svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.svc{background:var(--surf);border-radius:16px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
+.svc{background:var(--surf);border-radius:16px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .15s}
+.svc:hover{border-color:var(--acc)}
 .svc b{color:var(--acc);white-space:nowrap}
+.masters{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.master{background:var(--surf);border-radius:18px;padding:22px;border:1px solid var(--line);display:flex;gap:16px;align-items:center}
+.ava{width:64px;height:64px;border-radius:50%;flex:none;display:grid;place-items:center;font:700 24px var(--hf);color:#fff}
+.master h3{margin:0;font-size:19px}
+.master p{margin:2px 0 8px;color:var(--muted);font-size:14px}
+.master button{background:none;border:0;padding:0;color:var(--acc);font:700 14px var(--bf);cursor:pointer}
 .advs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .adv i{font-style:normal;color:var(--acc);font-weight:800;font-size:15px}
 .adv h3{font-size:22px;margin:8px 0}
 .adv p{color:var(--muted);margin:0}
 .rvs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.rv{margin:0;background:var(--surf);border-radius:18px;padding:26px;border:1px solid color-mix(in srgb,var(--ink) 8%,transparent)}
+.rv{margin:0;background:var(--surf);border-radius:18px;padding:26px;border:1px solid var(--line)}
 .stars{color:#F2B630;letter-spacing:3px}
 .rv blockquote{margin:12px 0;font-size:18px}
 .rv figcaption{color:var(--muted);font-size:15px}
-.cta{background:var(--acc);color:var(--accink);border-radius:26px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-.cta h2{margin:0 0 8px;color:var(--accink)}
-.cta p{margin:0;opacity:.85}
-.cta .inp{background:rgba(255,255,255,.95);color:#667;border:0}
-.cta .btn{background:var(--ink);color:var(--bg);width:100%;text-align:center}
-footer{padding:30px 0 50px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between}
+.cta{background:var(--acc);color:var(--accink);border-radius:26px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.cta h2{margin:0 0 10px;color:var(--accink)}
+.cta>div>p{margin:0 0 20px;opacity:.85}
+.cta ul{margin:0;padding-left:20px;opacity:.9;line-height:1.9}
+.cta form{background:var(--surf);color:var(--ink);border-radius:18px;padding:24px}
+.cta label,.lbl{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:0 0 6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.slot{border:1px solid var(--line);background:var(--bg);border-radius:9px;padding:8px 12px;font:600 14px var(--bf);cursor:pointer;color:var(--ink)}
+.slot[aria-pressed="true"]{background:var(--acc);color:var(--accink);border-color:var(--acc)}
+.slot:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.cta form .btn{width:100%;margin-top:6px}
+.err{color:#D93025;font-size:14px;min-height:20px;margin-top:8px}
+.agree{font-size:12px;color:var(--muted);margin-top:8px}
+.done{text-align:center;padding:10px 4px}
+.done .ok{width:56px;height:56px;border-radius:50%;background:color-mix(in srgb,var(--acc) 16%,transparent);color:var(--acc);display:grid;place-items:center;margin:0 auto 12px;font-size:28px}
+.done h3{margin:0 0 6px;font-size:24px}
+.done p{color:var(--muted);margin:0 0 14px}
+.tgprev{background:#E7F2FC;border-radius:14px;padding:12px;text-align:left;font-size:13px;color:#1d2b3a;margin-top:6px}
+.tgprev small{display:block;color:#5b6b7d;margin-bottom:6px}
+.tgprev pre{margin:0;background:#fff;border-radius:10px;padding:10px 12px;white-space:pre-wrap;font:13px/1.5 var(--bf);color:#1d2b3a}
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ct{background:var(--surf);border-radius:18px;padding:22px 24px;border:1px solid var(--line)}
+.ct span{display:block;color:var(--muted);font-size:14px}
+.ct b,.ct a{font-size:18px;font-weight:700;text-decoration:none}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--acc);font-weight:700;text-decoration:none}
 @media(max-width:820px){
  body{font-size:16px}.links,.phone{display:none}
+ .c{padding:0 18px}
  .hero{grid-template-columns:1fr;gap:28px;padding:16px 0 40px}
  h1{font-size:38px}.sub{font-size:17px}
  .stats{grid-template-columns:1fr 1fr 1fr;gap:8px;padding-bottom:44px}.st{padding:14px}.st b{font-size:22px}.st span{font-size:12px}
- h2{font-size:28px}.svcs,.advs,.rvs,.cta{grid-template-columns:1fr}.cta{padding:28px}
- .ctas .ghost{display:none}.btn{width:100%;text-align:center}
+ h2{font-size:28px}.svcs,.advs,.rvs,.cta,.masters,.contacts{grid-template-columns:1fr}.cta{padding:24px 18px}
+ .ctas .ghost{display:none}.btn{width:100%}
 }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.tab{border:1px solid var(--line);background:var(--surf);color:var(--ink);border-radius:99px;padding:9px 16px;font:700 14px var(--bf);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.item{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.item h3{margin:0;font:700 17px var(--bf)}
+.item p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.item b{color:var(--acc);white-space:nowrap}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 18px var(--bf);cursor:pointer;line-height:1}
+.qty button.add{background:var(--acc);color:var(--accink);border-color:var(--acc)}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+.cart{border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-size:15px}
+.cart div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.cart .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:800}
+.cart .empty{color:var(--muted)}
+.bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:none}
+.bar a{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--bg);text-decoration:none;border-radius:14px;padding:14px 18px;font-weight:800;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+@media(max-width:820px){.menu{grid-template-columns:1fr}.bar.on{display:block}}
+
 </style>
 </head>
 <body>
 <div class="c">
-<nav><div class="logo"><i></i>Зерно и пар</div><div class="links"><a>Услуги</a><a>Цены</a><a>Отзывы</a><a>Контакты</a></div><div class="phone">+7 (900) 000-00-00</div></nav>
-<header class="hero">
- <div><span class="badge">Каждый 6-й кофе в подарок</span><h1>Кофе, ради которого стоит выйти пораньше</h1><p class="sub">Обжариваем зерно сами раз в неделю. Завтраки весь день, выпечка из собственной пекарни.</p>
- <div class="ctas"><a class="btn" href="#form">Посмотреть меню</a><a class="btn ghost" href="#prices">Цены</a></div></div>
- <div class="card"><h3>Популярное</h3><p>Кофейня «Зерно и пар», Нижний Новгород</p><ul><li><span>Капучино</span><b>от 220 ₽</b></li><li><span>Фильтр-кофе</span><b>от 190 ₽</b></li><li><span>Раф</span><b>от 270 ₽</b></li></ul>
- <div class="inp">Ваше имя</div><div class="inp">+7 (___) ___-__-__</div><a class="btn" href="#form">Посмотреть меню</a></div>
+<nav>
+  <a class="logo" href="#top"><i></i>Зерно и пар</a>
+  <div class="links"><a href="#menu">Меню</a><a href="#form">Заказ навынос</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></div>
+  <a class="phone" href="tel:+79000000000">+7 (900) 000-00-00</a>
+</nav>
+<header class="hero" id="top">
+  <div>
+    <span class="badge">Каждый 6-й кофе в подарок</span>
+    <h1>Кофе, ради которого стоит выйти пораньше</h1>
+    <p class="sub">Обжариваем зерно каждую неделю, завтраки подаём весь день, выпечку печём сами. Закажите онлайн и заберите без очереди.</p>
+    <div class="ctas"><a class="btn" href="#menu">Посмотреть меню</a><a class="btn ghost" href="#form">Заказ навынос</a></div>
+  </div>
+  <form class="card" id="quick">
+    <h3>Популярное</h3>
+    <p>Кофейня «Зерно и пар», Нижний Новгород</p>
+    <ul><li><span>Капучино</span><b>220 ₽</b></li><li><span>Фильтр-кофе</span><b>190 ₽</b></li><li><span>Раф ванильный</span><b>270 ₽</b></li></ul>
+    <button class="btn" type="submit">Собрать заказ</button>
+  </form>
 </header>
-<div class="stats"><div class="st"><b>7:30</b><span>открываемся</span></div><div class="st"><b>12</b><span>сортов зерна</span></div><div class="st"><b>4.9</b><span>на Яндекс Картах</span></div></div>
-<section id="prices"><h2>Услуги и цены</h2><div class="svcs"><div class="svc"><span>Капучино</span><b>от 220 ₽</b></div><div class="svc"><span>Фильтр-кофе</span><b>от 190 ₽</b></div><div class="svc"><span>Раф</span><b>от 270 ₽</b></div><div class="svc"><span>Сырники со сметаной</span><b>350 ₽</b></div><div class="svc"><span>Круассан</span><b>от 180 ₽</b></div><div class="svc"><span>Зерно на вынос, 250 г</span><b>от 690 ₽</b></div></div></section>
-<section><h2>Почему выбирают нас</h2><div class="advs"><div class="adv"><i>01</i><h3>Своя обжарка</h3><p>Свежий кофе с чётким вкусом, а не горечью</p></div><div class="adv"><i>02</i><h3>Завтраки весь день</h3><p>Сырники и омлеты подаём до закрытия</p></div><div class="adv"><i>03</i><h3>С собой за 3 минуты</h3><p>Закажите заранее и заберите без очереди</p></div></div></section>
-<section><h2>Отзывы клиентов</h2><div class="rvs"><figure class="rv"><div class="stars">★★★★★</div><blockquote>Лучший фильтр в районе, беру каждое утро перед работой.</blockquote><figcaption>Денис</figcaption></figure><figure class="rv"><div class="stars">★★★★★</div><blockquote>Сырники как у бабушки, а кофе можно выбрать под настроение.</blockquote><figcaption>Вера</figcaption></figure></div></section>
-<section id="form"><div class="cta"><div><h2>Оставьте заявку</h2><p>Перезвоним в течение 15 минут и подберём удобное время.</p></div>
-<div><div class="inp">Ваше имя</div><div class="inp">+7 (___) ___-__-__</div><a class="btn">Отправить заявку</a></div></div></section>
-<footer><span>© Зерно и пар, Нижний Новгород</span></footer>
+<div class="stats"><div class="st"><b>7:30</b><span>открываемся</span></div><div class="st"><b>12</b><span>сортов кофе</span></div><div class="st"><b>4.9</b><span>на Яндекс Картах</span></div></div>
+<section id="menu"><h2>Меню</h2><div class="tabs" id="tabs" role="tablist"></div><div class="menu" id="menuList"></div></section>
+<section>
+  <h2>Почему выбирают нас</h2>
+  <div class="advs"><div class="adv"><i>01</i><h3>Своя обжарка</h3><p>Свежий кофе с понятным вкусом, а не горечью</p></div><div class="adv"><i>02</i><h3>Завтраки весь день</h3><p>Сырники и омлеты до самого закрытия</p></div><div class="adv"><i>03</i><h3>Заказ без очереди</h3><p>Закажите на сайте к нужному времени и просто заберите</p></div></div>
+</section>
+<section id="reviews">
+  <h2>Отзывы клиентов</h2>
+  <div class="rvs"><figure class="rv"><div class="stars">★★★★★</div><blockquote>Лучший фильтр-кофе в районе, беру каждое утро.</blockquote><figcaption>Денис</figcaption></figure><figure class="rv"><div class="stars">★★★★★</div><blockquote>Сырники как у бабушки, а кофе подбирают под настроение.</blockquote><figcaption>Вера</figcaption></figure></div>
+</section>
+<section id="form">
+  <div class="cta">
+    <div>
+      <h2>Заказ навынос</h2>
+      <p>Соберите заказ в меню, выберите время и заберите на стойке без очереди.</p>
+      <ul><li>Готовим к указанному времени</li><li>Оплата на месте картой или наличными</li><li>Свой стакан — скидка 20 ₽</li></ul>
+    </div>
+    
+    <form id="book" novalidate>
+      <span class="lbl">Ваш заказ</span>
+      <div class="cart" id="cart"></div>
+      <label for="oTime">Когда заберёте</label><select class="inp" id="oTime"></select>
+      <div class="row2">
+        <div><label for="bName">Имя</label><input class="inp" id="bName" placeholder="Ваше имя" autocomplete="given-name"></div>
+        <div><label for="bPhone">Телефон</label><input class="inp" id="bPhone" type="tel" data-mask placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
+      </div>
+      <label for="bNote">Комментарий</label><input class="inp" id="bNote" placeholder="Например: на овсяном молоке">
+      <input id="bHp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <button class="btn" id="bSend" type="submit">Заказать к времени</button>
+      <div class="err" id="bErr" role="alert"></div>
+      <div class="agree">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</div>
+    </form>
+  </div>
+</section>
+<section id="contacts">
+  <h2>Контакты</h2>
+  <div class="contacts">
+    <div class="ct"><span>Телефон</span><a href="tel:+79000000000">+7 (900) 000-00-00</a></div>
+    <div class="ct"><span>Адрес</span><b>Нижний Новгород</b></div>
+    <div class="ct"><span>Режим работы</span><b>Ежедневно 7:30–21:00</b></div>
+  </div>
+</section>
+<footer>
+  <span>© Зерно и пар, Нижний Новгород</span>
+  <span>Сайт с онлайн-заказом: <a href="https://kuleshov-web.github.io/" target="_blank" rel="noopener">Даниил Кулешов</a></span>
+</footer>
 </div>
+<div class="bar" id="bar"><a href="#form"><span id="barText">Корзина</span><span id="barSum"></span></a></div>
+<script>
+/* ===== Куда приходят заявки =====
+   Впиши токен бота и chat id — и заявки будут приходить в Telegram.
+   Если оставить пустыми, сайт работает в демо-режиме и показывает,
+   как будет выглядеть уведомление владельцу. */
+const BOT_TOKEN = "";
+const CHAT_ID   = "";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ymd = x => `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`;
+function dateOptions(days){
+  const d = new Date(), out = [];
+  for (let k=0;k<days;k++){
+    const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()+k);
+    const dm = x.toLocaleDateString("ru-RU",{day:"numeric",month:"long"});
+    const label = k===0 ? `Сегодня, ${dm}` : k===1 ? `Завтра, ${dm}` : `${x.toLocaleDateString("ru-RU",{weekday:"short"})}, ${dm}`;
+    out.push(`<option value="${ymd(x)}">${label}</option>`);
+  }
+  return out.join("");
+}
+/* «занятые» слоты: детерминированно от даты, чтобы выглядело живо */
+function slotsHTML(times, dateVal, salt, picked){
+  let h = 0; for (const ch of dateVal + salt) h = (h*31 + ch.charCodeAt(0)) >>> 0;
+  const now = new Date(), isToday = dateVal === ymd(now);
+  return times.map((t,i)=>{
+    const [hh,mm] = t.split(":").map(Number);
+    const past = isToday && (hh*60+mm) <= now.getHours()*60+now.getMinutes()+60;
+    const busy = past || ((h >> (i % 16) * 2) & 3) === 0;
+    return `<button type="button" class="slot" data-t="${t}" ${busy?"disabled":""} aria-pressed="${t===picked && !busy}">${t}</button>`;
+  }).join("");
+}
+function mask(el){
+  el.addEventListener("input", ()=>{
+    let d = el.value.replace(/\D/g,""); if (d[0]==="8") d = "7"+d.slice(1); if (d && d[0]!=="7") d = "7"+d; d = d.slice(0,11);
+    const p = d.slice(1); let s = "+7";
+    if (p.length) s += " (" + p.slice(0,3); if (p.length>=3) s += ")"; if (p.length>3) s += " " + p.slice(3,6);
+    if (p.length>6) s += "-" + p.slice(6,8); if (p.length>8) s += "-" + p.slice(8,10);
+    el.value = d ? s : "";
+  });
+}
+const phoneOk = v => v.replace(/\D/g,"").length === 11;
+/* "sent" — ушло в Telegram, "demo" — бот не настроен, "fail" — ошибка */
+async function sendTG(text){
+  if (!BOT_TOKEN || !CHAT_ID) return "demo";
+  try{
+    const r = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:CHAT_ID,text})});
+    return r.ok ? "sent" : "fail";
+  }catch(_){ return "fail"; }
+}
+function showDone(form, title, msg, text, mode){
+  form.innerHTML = `<div class="done"><div class="ok">✓</div><h3>${esc(title)}</h3><p>${esc(msg)}</p>
+    ${mode==="sent" ? "" : `<div class="tgprev"><small>Демо: в эту же секунду владелец получает в Telegram:</small><pre>${esc(text)}</pre></div>`}</div>`;
+}
+function goTo(id){ $(id).scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); }
+document.querySelectorAll("[data-mask]").forEach(mask);
+
+
+const MENU = {"Кофе": [["Эспрессо", "30 мл", 150], ["Американо", "250 мл", 170], ["Капучино", "300 мл", 220], ["Флэт уайт", "200 мл", 240], ["Раф ванильный", "300 мл", 270], ["Фильтр-кофе", "300 мл, зерно недели", 190]], "Завтраки": [["Сырники со сметаной", "3 шт.", 350], ["Омлет с беконом", "с тостом", 320], ["Каша овсяная", "с ягодами", 240], ["Гранола с йогуртом", "", 260]], "Выпечка": [["Круассан", "классический", 180], ["Круассан с ветчиной и сыром", "", 290], ["Синнабон", "", 210], ["Чизкейк Нью-Йорк", "", 280]], "Зерно": [["Зерно на вынос", "250 г, Колумбия", 690], ["Зерно на вынос", "250 г, Эфиопия", 790]]};
+const OPEN = [7,30], CLOSE = [21,0];
+const cart = {};               // "кат|i" → количество
+let cat = Object.keys(MENU)[0];
+const price = n => n.toLocaleString("ru-RU") + " ₽";
+function renderTabs(){ $("tabs").innerHTML = Object.keys(MENU).map(c=>`<button type="button" class="tab" role="tab" aria-selected="${c===cat}" data-cat="${c}">${c}</button>`).join(""); }
+function renderMenu(){
+  $("menuList").innerHTML = MENU[cat].map((it,i)=>{ const k=cat+"|"+i, q=cart[k]||0;
+    return `<div class="item"><div><h3>${it[0]}</h3>${it[1]?`<p>${it[1]}</p>`:""}</div>
+      <div class="qty"><b>${price(it[2])}</b>${q?`<button type="button" data-k="${k}" data-d="-1" aria-label="Убрать">−</button><span>${q}</span>`:""}<button type="button" class="add" data-k="${k}" data-d="1" aria-label="Добавить">+</button></div></div>`;}).join("");
+}
+function lines(){ return Object.entries(cart).filter(([,q])=>q>0).map(([k,q])=>{ const [c,i]=k.split("|"), it=MENU[c][+i]; return {name:it[0]+(c==="Зерно"?" ("+it[1]+")":""),q,sum:q*it[2]}; }); }
+function renderCart(){
+  const ls = lines(), tot = ls.reduce((a,l)=>a+l.sum,0), cnt = ls.reduce((a,l)=>a+l.q,0);
+  $("cart").innerHTML = ls.length ? ls.map(l=>`<div><span>${esc(l.name)} × ${l.q}</span><span>${price(l.sum)}</span></div>`).join("") + `<div class="tot"><span>Итого</span><span>${price(tot)}</span></div>`
+                                  : `<div class="empty">Добавьте напитки и еду из меню выше.</div>`;
+  $("bar").classList.toggle("on", cnt>0);
+  $("barText").textContent = `Корзина · ${cnt}`; $("barSum").textContent = price(tot) + " →";
+}
+function pickupOptions(){
+  const now = new Date(), out = [];
+  const openM = OPEN[0]*60+OPEN[1], closeM = CLOSE[0]*60+CLOSE[1];
+  let start = now.getHours()*60+now.getMinutes()+15; start = Math.ceil(start/15)*15;
+  let day = "Сегодня";
+  if (start < openM+15) start = openM+15;
+  if (start > closeM-15){ start = openM+15; day = "Завтра"; }
+  if (day==="Сегодня" && now.getHours()*60+now.getMinutes() >= openM) out.push(`<option value="asap">Как можно скорее (через 10–15 мин)</option>`);
+  for (let m=start, n=0; m<=closeM-15 && n<16; m+=15, n++){ const t=`${String(Math.floor(m/60)).padStart(2,"0")}:${String(m%60).padStart(2,"0")}`; out.push(`<option value="${day}, ${t}">${day}, ${t}</option>`); }
+  $("oTime").innerHTML = out.join("");
+}
+$("tabs").addEventListener("click", e=>{ const b=e.target.closest("[data-cat]"); if(!b) return; cat=b.dataset.cat; renderTabs(); renderMenu(); });
+$("menuList").addEventListener("click", e=>{ const b=e.target.closest("[data-k]"); if(!b) return; const k=b.dataset.k; cart[k]=Math.max(0,(cart[k]||0)+ +b.dataset.d); renderMenu(); renderCart(); $("bErr").textContent=""; });
+$("quick").addEventListener("submit", e=>{ e.preventDefault(); goTo("menu"); });
+$("book").addEventListener("submit", async e=>{
+  e.preventDefault(); if ($("bHp").value) return;
+  const ls = lines(), name=$("bName").value.trim(), phone=$("bPhone").value.trim();
+  if (!ls.length) return $("bErr").textContent="Добавьте хотя бы одну позицию из меню.";
+  if (!name) return $("bErr").textContent="Укажите имя.";
+  if (!phoneOk(phone)) return $("bErr").textContent="Проверьте номер телефона.";
+  $("bErr").textContent="";
+  const tot = ls.reduce((a,l)=>a+l.sum,0), when = $("oTime").value==="asap" ? "как можно скорее" : $("oTime").value;
+  const text = `☕ Новый заказ навынос — «Зерно и пар»\nКлиент: ${name}\nТелефон: ${phone}\nЗаберёт: ${when}\n` + ls.map(l=>`• ${l.name} × ${l.q} — ${price(l.sum)}`).join("\n") + `\nИтого: ${price(tot)}` + ($("bNote").value.trim()?`\nКомментарий: ${$("bNote").value.trim()}`:"");
+  const btn=$("bSend"); btn.disabled=true; btn.textContent="Отправляем…";
+  const mode = await sendTG(text);
+  if (mode==="fail"){ btn.disabled=false; btn.textContent="Заказать к времени"; $("bErr").textContent="Не получилось отправить. Позвоните нам: +7 (900) 000-00-00"; return; }
+  $("bar").classList.remove("on"); Object.keys(cart).forEach(k=>delete cart[k]); renderMenu();
+  showDone($("book"), "Заказ принят!", `${name}, заказ будет ждать вас на стойке выдачи (${when}). Оплата на месте.`, text, mode);
+});
+renderTabs(); renderMenu(); renderCart(); pickupOptions();
+
+</script>
 </body>
 </html>
